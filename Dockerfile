@@ -14,10 +14,6 @@ RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 RUN yum -y install rsyslog
 RUN yum install -y jenkins
 RUN chkconfig jenkins on
-RUN service jenkins start
-RUN sleep 60
-RUN curl -L http://updates.jenkins-ci.org/update-center.json | sed '1d;$d' | curl -X POST -H 'Accept: application/json' -d @- http://localhost:8080/updateCenter/byId/default/postBack
-RUN curl -o /tmp/jenkins-cli.jar http://localhost:8080/jnlpJars/jenkins-cli.jar
-RUN java -jar /tmp/jenkins-cli.jar -s http://localhost:8080 install-plugin phing --username admin --password `cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-ENTRYPOINT service jenkins restart && /bin/bash
+
+ENTRYPOINT service jenkins start && /bin/bash
