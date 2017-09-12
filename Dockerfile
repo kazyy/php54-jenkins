@@ -6,6 +6,7 @@ RUN rpm -U --force http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 RUN yum install -y --enablerepo=remi-php54 php
 RUN yum install -y --enablerepo=remi-php54 php-common php-pecl-xdebug php-xml php-devel php-pear-XML-Serializer php-password-compat php-symfony php-phpunit-PHPUnit php-phpunit-phpcpd php-pear-PHP-CodeSniffer php-phpmd-PHP-PMD php-pear-phing
 
+RUN yum install -y git
 
 # jenkins構築
 RUN yum install -y java-1.8.0-openjdk-devel
