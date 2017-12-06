@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ims" basedir="." default="all">
+  <property name="outputDir" value="reports"/>
+
+  <target name="phplint">
+    <phplint haltonfailure="true">
+      <fileset dir="${targetDir}">
+        <include name="**/*.php"/>
+      </fileset>
+    </phplint>
+  </target>
+
+  <target name="phpcs" description="Generate phpcs.xml using PHP_CodeSniffer" >
+    <mkdir dir="${outputDir}" />
+    <phpcodesniffer standard="PSR2_Custom" file="${targetDir}/" allowedFileExtensions="php" >
+      <formatter type="checkstyle" outfile="${outputDir}/checkstyle-result.xml"/>
+    </phpcodesniffer>
+  </target>
+
+  <target name="phpcpd">
+    <mkdir dir="${outputDir}" />
+    <phpcpd minLines="10">
+      <fileset dir="${targetDir}">
+      </fileset>
+      <formatter type="pmd" outfile="${outputDir}/cpd.xml"/>
+    </phpcpd>
+  </target>
+
+  <target name="phpmd">
+    <mkdir dir="${outputDir}" />
+    <phpmd rulesets="codesize,unusedcode">
+      <fileset dir="${targetDir}">
+      </fileset>
+      <formatter type="xml" outfile="${outputDir}/pmd.xml"/>
+    </phpmd>
+  </target>
+
+  <target name="all" depends="phplint,phpcs,phpcpd,phpmd">
+  </target>
+</project>
+
