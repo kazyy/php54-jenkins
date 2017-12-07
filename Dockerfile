@@ -6,6 +6,7 @@ RUN rpm -U --force http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 RUN yum install -y --enablerepo=remi-php54 php
 RUN yum install -y --enablerepo=remi-php54 php-common php-pecl-xdebug php-xml php-devel php-pear-XML-Serializer php-password-compat php-symfony php-phpunit-PHPUnit php-phpunit-phpcpd php-pear-PHP-CodeSniffer php-phpmd-PHP-PMD php-pear-phing
 RUN sed -i 's/^memory_limit.*/memory_limit=512M/' /etc/php.ini
+RUN echo "date.timezone=Asia/Tokyo" >> /etc/php.ini
 
 # jenkins構築
 RUN yum install -y java-1.8.0-openjdk-devel
@@ -13,7 +14,6 @@ RUN curl -o /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenki
 RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 RUN yum -y install rsyslog
 RUN yum install -y jenkins
-#RUN chkconfig jenkins on
 
 # プラグインインストール
 ADD http://updates.jenkins-ci.org/download/plugins/apache-httpcomponents-client-4-api/4.5.3-2.0/apache-httpcomponents-client-4-api.hpi /var/lib/jenkins/plugins/
