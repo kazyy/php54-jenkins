@@ -1,6 +1,7 @@
 FROM centos:6
 RUN yum install -y epel-release
 RUN rpm -U --force http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
 # PHP関連
 RUN yum install -y --enablerepo=remi-php54 php
