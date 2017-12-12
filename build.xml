@@ -28,7 +28,7 @@
 
   <target name="phpmd">
     <mkdir dir="${outputDir}" />
-    <phpmd rulesets="codesize,design,unusedcode">
+    <phpmd rulesets="codesize,unusedcode">
       <fileset dir="${targetDir}">
       </fileset>
       <formatter type="xml" outfile="${outputDir}/pmd.xml"/>
