@@ -6,6 +6,8 @@
     <exclude name="Generic.ControlStructures.InlineControlStructure"/>
     <exclude name="Generic.Functions.FunctionCallArgumentSpacing"/>
     <exclude name="Generic.Files.LineLength.TooLong"/>
+    <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
+    <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
     <exclude name="PSR1.Classes.ClassDeclaration"/>
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
     <exclude name="PSR2.Classes.ClassDeclaration"/>
