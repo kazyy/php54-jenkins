@@ -8,15 +8,16 @@
     <exclude name="Generic.Files.LineLength.TooLong"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
+    <exclude name="Squiz.Classes.ValidClassName"/>
+    <exclude name="Squiz.Scope.MethodScope"/>
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
+    <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+    <exclude name="Zend.Files.ClosingTag.NotAllowed"/>
     <exclude name="PSR1.Classes.ClassDeclaration"/>
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
     <exclude name="PSR2.Classes.ClassDeclaration"/>
     <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
     <exclude name="PSR2.ControlStructures.ElseIfDeclaration"/>
     <exclude name="PSR2.Files.EndFileNewline"/>
-    <exclude name="Squiz.Classes.ValidClassName"/>
-    <exclude name="Squiz.Scope.MethodScope"/>
-    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
-    <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration"/>
   </rule>
 </ruleset>
