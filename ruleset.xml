@@ -16,8 +16,10 @@
     <exclude name="PSR1.Classes.ClassDeclaration"/>
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
     <exclude name="PSR2.Classes.ClassDeclaration"/>
+    <exclude name="PSR2.Classes.PropertyDeclaration.ScopeMissing"/>
     <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
     <exclude name="PSR2.ControlStructures.ElseIfDeclaration"/>
     <exclude name="PSR2.Files.EndFileNewline"/>
+    <exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
   </rule>
 </ruleset>
