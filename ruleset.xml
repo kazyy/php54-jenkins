@@ -6,12 +6,16 @@
     <exclude name="Generic.ControlStructures.InlineControlStructure"/>
     <exclude name="Generic.Functions.FunctionCallArgumentSpacing"/>
     <exclude name="Generic.Files.LineLength.TooLong"/>
+    <exclude name="Generic.PHP.LowerCaseConstant.Found"/>
+    <exclude name="Generic.PHP.LowerCaseKeyword.Found"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
     <exclude name="Squiz.Classes.ValidClassName"/>
     <exclude name="Squiz.Scope.MethodScope"/>
-    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
+    <exclude name="Squiz.ControlStructures.ControlSignature"/>
     <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
     <exclude name="Zend.Files.ClosingTag.NotAllowed"/>
     <exclude name="PSR1.Classes.ClassDeclaration"/>
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
