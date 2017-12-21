@@ -13,6 +13,7 @@
     <exclude name="Squiz.Classes.ValidClassName"/>
     <exclude name="Squiz.Scope.MethodScope"/>
     <exclude name="Squiz.ControlStructures.ControlSignature"/>
+    <exclude name="Squiz.ControlStructures.ForLoopDeclaration"/>
     <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration"/>
     <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
     <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
@@ -23,6 +24,7 @@
     <exclude name="PSR2.Classes.PropertyDeclaration.ScopeMissing"/>
     <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
     <exclude name="PSR2.ControlStructures.ElseIfDeclaration"/>
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration"/>
     <exclude name="PSR2.Files.EndFileNewline"/>
     <exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
   </rule>
