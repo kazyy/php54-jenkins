@@ -12,7 +12,7 @@
 
   <target name="phpcs" description="Generate phpcs.xml using PHP_CodeSniffer" >
     <mkdir dir="${outputDir}" />
-    <phpcodesniffer standard="PSR2_Custom" file="${targetDir}/" allowedFileExtensions="php" >
+    <phpcodesniffer standard="PSR2_Custom" file="${targetDir}/" allowedFileExtensions="php" ignorePatterns="views">
       <formatter type="checkstyle" outfile="${outputDir}/checkstyle-result.xml"/>
     </phpcodesniffer>
   </target>
