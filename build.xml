@@ -6,13 +6,31 @@
     <phplint haltonfailure="true">
       <fileset dir="${targetDir}">
         <include name="**/*.php"/>
+        <exclude name="**/views/**"/>
+        <exclude name="**/third_party/**"/>
+        <exclude name="**/libraries/php-sdk/**"/>
+        <exclude name="**/libraries/s3/**"/>
+        <exclude name="**/libraries/PHPExcel/**"/>
+        <exclude name="**/libraries/ApnsPHP/**"/>
+        <exclude name="**/libraries/classUpload/**"/>
+        <exclude name="**/libraries/vendor/**"/>
       </fileset>
     </phplint>
   </target>
 
   <target name="phpcs" description="Generate phpcs.xml using PHP_CodeSniffer" >
     <mkdir dir="${outputDir}" />
-    <phpcodesniffer standard="PSR2_Custom" file="${targetDir}/" allowedFileExtensions="php" ignorePatterns="views">
+    <phpcodesniffer standard="PSR2_Custom" allowedFileExtensions="php">
+      <fileset dir="${targetDir}">
+        <exclude name="**/views/**"/>
+        <exclude name="**/third_party/**"/>
+        <exclude name="**/libraries/php-sdk/**"/>
+        <exclude name="**/libraries/s3/**"/>
+        <exclude name="**/libraries/PHPExcel/**"/>
+        <exclude name="**/libraries/ApnsPHP/**"/>
+        <exclude name="**/libraries/classUpload/**"/>
+        <exclude name="**/libraries/vendor/**"/>
+      </fileset>
       <formatter type="checkstyle" outfile="${outputDir}/checkstyle-result.xml"/>
     </phpcodesniffer>
   </target>
@@ -21,6 +39,13 @@
     <mkdir dir="${outputDir}" />
     <phpcpd minLines="10">
       <fileset dir="${targetDir}">
+        <exclude name="**/third_party/**"/>
+        <exclude name="**/libraries/php-sdk/**"/>
+        <exclude name="**/libraries/s3/**"/>
+        <exclude name="**/libraries/PHPExcel/**"/>
+        <exclude name="**/libraries/ApnsPHP/**"/>
+        <exclude name="**/libraries/classUpload/**"/>
+        <exclude name="**/libraries/vendor/**"/>
       </fileset>
       <formatter type="pmd" outfile="${outputDir}/cpd.xml"/>
     </phpcpd>
@@ -30,6 +55,14 @@
     <mkdir dir="${outputDir}" />
     <phpmd rulesets="codesize,unusedcode">
       <fileset dir="${targetDir}">
+        <exclude name="**/views/**"/>
+        <exclude name="**/third_party/**"/>
+        <exclude name="**/libraries/php-sdk/**"/>
+        <exclude name="**/libraries/s3/**"/>
+        <exclude name="**/libraries/PHPExcel/**"/>
+        <exclude name="**/libraries/ApnsPHP/**"/>
+        <exclude name="**/libraries/classUpload/**"/>
+        <exclude name="**/libraries/vendor/**"/>
       </fileset>
       <formatter type="xml" outfile="${outputDir}/pmd.xml"/>
     </phpmd>
