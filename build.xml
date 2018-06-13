@@ -1,11 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <project name="" basedir="." default="all">
   <property name="outputDir" value="reports"/>
 
-  <target name="phplint">
-    <phplint haltonfailure="true">
-      <fileset dir="${targetDir}">
-        <include name="**/*.php"/>
+  <patternset id="ex">
         <exclude name="**/views/**"/>
         <exclude name="**/third_party/**"/>
         <exclude name="**/libraries/php-sdk/**"/>
@@ -14,22 +10,23 @@
         <exclude name="**/libraries/ApnsPHP/**"/>
         <exclude name="**/libraries/classUpload/**"/>
         <exclude name="**/libraries/vendor/**"/>
+  </patternset>
+
+  <target name="phplint">
+    <phplint haltonfailure="true">
+      <fileset dir="${targetDir}">
+        <include name="**/*.php"/>
+        <patternset refid="ex" />
       </fileset>
     </phplint>
   </target>
 
   <target name="phpcs" description="Generate phpcs.xml using PHP_CodeSniffer" >
     <mkdir dir="${outputDir}" />
-    <phpcodesniffer standard="PSR2_Custom" allowedFileExtensions="php">
+    <phpcodesniffer standard="PSR2_Custom">
       <fileset dir="${targetDir}">
-        <exclude name="**/views/**"/>
-        <exclude name="**/third_party/**"/>
-        <exclude name="**/libraries/php-sdk/**"/>
-        <exclude name="**/libraries/s3/**"/>
-        <exclude name="**/libraries/PHPExcel/**"/>
-        <exclude name="**/libraries/ApnsPHP/**"/>
-        <exclude name="**/libraries/classUpload/**"/>
-        <exclude name="**/libraries/vendor/**"/>
+        <include name="**/*.php"/>
+        <patternset refid="ex" />
       </fileset>
       <formatter type="checkstyle" outfile="${outputDir}/checkstyle-result.xml"/>
     </phpcodesniffer>
@@ -39,13 +36,7 @@
     <mkdir dir="${outputDir}" />
     <phpcpd minLines="10">
       <fileset dir="${targetDir}">
-        <exclude name="**/third_party/**"/>
-        <exclude name="**/libraries/php-sdk/**"/>
-        <exclude name="**/libraries/s3/**"/>
-        <exclude name="**/libraries/PHPExcel/**"/>
-        <exclude name="**/libraries/ApnsPHP/**"/>
-        <exclude name="**/libraries/classUpload/**"/>
-        <exclude name="**/libraries/vendor/**"/>
+        <patternset refid="ex" />
       </fileset>
       <formatter type="pmd" outfile="${outputDir}/cpd.xml"/>
     </phpcpd>
@@ -55,14 +46,7 @@
     <mkdir dir="${outputDir}" />
     <phpmd rulesets="codesize,unusedcode">
       <fileset dir="${targetDir}">
-        <exclude name="**/views/**"/>
-        <exclude name="**/third_party/**"/>
-        <exclude name="**/libraries/php-sdk/**"/>
-        <exclude name="**/libraries/s3/**"/>
-        <exclude name="**/libraries/PHPExcel/**"/>
-        <exclude name="**/libraries/ApnsPHP/**"/>
-        <exclude name="**/libraries/classUpload/**"/>
-        <exclude name="**/libraries/vendor/**"/>
+        <patternset refid="ex" />
       </fileset>
       <formatter type="xml" outfile="${outputDir}/pmd.xml"/>
     </phpmd>
